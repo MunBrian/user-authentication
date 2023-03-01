@@ -13,8 +13,9 @@ module.exports = {
       "darkblue": "#174f69",
       "lightblue": "#206e92",
       "lightgrey": "#B1B4B9",
-      "darkgreen": "#04af53"
-    
+      "darkgreen": "#04af53",
+      "red": "#E81224",
+      "lightred": "#ee2a3b"
     }
 
   },
