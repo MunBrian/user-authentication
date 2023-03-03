@@ -58,16 +58,20 @@ const LoginPage = () => {
         }))
 
         //delete value from password input
-        setFormData({
-          password: ""
-        })
+        setFormData(prevState => ({
+          ...prevState, password: ""
+        }))
 
         return
       }
 
+      if (res.token) {
+        localStorage.setItem("user", JSON.stringify(res.token))
+      }
+
       //if email and password are valid
       //navigate to home page
-      navigate("/")
+      navigate("/home")
       
     } catch (error) {
       console.log(error)

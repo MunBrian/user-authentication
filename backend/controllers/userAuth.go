@@ -1,9 +1,12 @@
 package controllers
 
 import (
+	"time"
+
 	"github.com/MunBrian/user-authentication/initializers"
 	"github.com/MunBrian/user-authentication/models"
 	"github.com/gofiber/fiber/v2"
+	"github.com/golang-jwt/jwt/v4"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -48,6 +51,7 @@ func UserSignUp(c *fiber.Ctx) error {
 }
 
 func UserLogin(c *fiber.Ctx) error {
+
 	//create formData struct of type LoginData
 	var formData LoginData
 
@@ -82,9 +86,28 @@ func UserLogin(c *fiber.Ctx) error {
 		})
 	}
 
+	token, err := generateToken(user.FirstName)
+
+	//check is token id generated succesfully
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"message": "token not generated",
+		})
+	}
+
 	//if passwords match
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"token":   token,
 		"message": "Successfully logged in",
+	})
+}
+
+func HomePage(c *fiber.Ctx) error {
+	// Get "name" claim value from request header
+	name := c.GetRespHeader("X-User-Name")
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"name": name,
 	})
 }
 
@@ -98,4 +121,22 @@ func hashPassword(password string) (string, error) {
 func checkPasswordHash(password, hash string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
 	return err == nil
+}
+
+func generateToken(username string) (string, error) {
+
+	// Create the Claims
+	claims := jwt.MapClaims{
+		"name": username,
+		"user": true,
+		"exp":  time.Now().Add(time.Hour * 72).Unix(),
+	}
+
+	// Create token
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+	// Generate encoded token and send it as response.
+	t, err := token.SignedString([]byte("secret"))
+
+	return t, err
 }

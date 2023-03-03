@@ -47,7 +47,7 @@ const SignUpPage = () => {
          return
       } else if (password !== confirmPassword) {
          setErr(prevState => ({
-            ...prevState, passwordErr:true
+            ...prevState, passwordErr:true, passwordLengthErr:false
          }))
          return
       } else {
@@ -77,6 +77,7 @@ const SignUpPage = () => {
             setErr(prevState => ({
                ...prevState, emailExist:true
             }))
+            return
          }
 
          //navigate to login page
