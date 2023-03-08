@@ -54,7 +54,7 @@ const LoginPage = () => {
 
       if (res.status === 400) {
         setErr(prevState => ({
-          ...prevState, loginErr: true
+          ...prevState, loginErr: true, emailErr: false
         }))
 
         //delete value from password input
@@ -96,22 +96,17 @@ const LoginPage = () => {
                   <form className='flex flex-col' onSubmit={handleSubmit}>
                       <div className='mb-5'>
                          <label className={ emailErr ? 'block text-red text-base font-medium' : 'block text-lightgrey text-base' }>Email</label>
-                        <input name="email" value={email} onChange={handleChange} className={emailErr ? "border-red border-2 rounded-md w-full p-2.5 placeholder:text-red" : "border-lightgrey border-2 rounded-md w-full p-2.5 placeholder:text-darkgrey"} type="email" placeholder='Abc@gmail.com' required />
+                        <input name="email" value={email} onChange={handleChange} className={emailErr ? "border-red border-2 rounded-md w-full p-2.5 text-red focus:text-black" : "border-lightgrey border-2 rounded-md w-full p-2.5 placeholder:text-darkgrey"} type="email" placeholder='Abc@gmail.com' required />
                         <p className={emailErr ? "text-sm text-red font-medium" : "hidden"}>Please enter a valid email address</p>
                       </div>
                       <div className='mb-5'>
                           <label className='block text-lightgrey text-base'>Password</label>
                          <input value={password} name="password" onChange={handleChange} className="border-lightgrey border-2 rounded-md w-full p-2.5 placeholder:text-darkgrey" type="password" placeholder='*****' required />
                       </div>
-                      <div className='flex justify-between mb-6'>    
-                        <div>  
-                            <input className='mr-1.5' type="checkbox" />
-                            <label className='text-darkgrey'>Remember me</label>
-                        </div>
-                        <Link className="text-lightblue  font-medium hover:text-darkblue" to={""}>Forgot password?</Link>
+                      <div className='mb-6'>    
+                        <Link className="text-lightblue  font-medium hover:text-darkblue" to={"/forgot-password"}>Forgot password?</Link>
                       </div>
                       <input type="submit" value="Login" className='p-3 mb-3 bg-lightgreen font-semibold  rounded-md text-white transition duration-500 ease-in-out hover:bg-darkgreen' />
-                    <button className='p-3 mb-3 bg-lightblack rounded-md text-white font-semibold transition duration-500 ease-in-out hover:bg-black ease-in'> <img className='h-6 w-6 inline-flex' src={process.env.PUBLIC_URL + "/assets/images/icons8-google-48.png"} alt="" /> Or sign-in with google</button>
                   </form>
               <div className="mt-28 text-center">      
                  <p >Don't have an account? <Link to={"/signup"} className='text-lightblue font-medium hover:text-darkblue'>Sign up today</Link></p>
