@@ -25,6 +25,8 @@ func main() {
 
 	app.Post("/login", controllers.UserLogin)
 
+	app.Post("/forgot-password", controllers.ForgotPassword)
+
 	// JWT Middleware
 	app.Use(jwtware.New(jwtware.Config{SigningKey: []byte("secret")}))
 

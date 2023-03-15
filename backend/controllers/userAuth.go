@@ -15,6 +15,10 @@ type LoginData struct {
 	Password string `json:"password"`
 }
 
+type ForgotPasswordData struct {
+	Email string `json:"email"`
+}
+
 func UserSignUp(c *fiber.Ctx) error {
 	//create a struct user of type User model
 	var user models.User
@@ -111,6 +115,35 @@ func HomePage(c *fiber.Ctx) error {
 	})
 }
 
+func ForgotPassword(c *fiber.Ctx) error {
+	var err error
+
+	var emailData ForgotPasswordData
+
+	//get data from body
+	if err := c.BodyParser(&emailData); err != nil {
+		return c.JSON(err.Error())
+	}
+
+	//get token
+	token, err := generateToken(emailData.Email)
+
+	if err != nil {
+		c.JSON(err.Error())
+	}
+
+	//generate and send email with unique token to user's email
+	err = GenerateEmail([]string{emailData.Email}, token)
+
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(err)
+	}
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": "email sent successfull",
+	})
+}
+
 // generate hashed password
 func hashPassword(password string) (string, error) {
 	bytes, err := bcrypt.GenerateFromPassword([]byte(password), 14)
@@ -123,13 +156,13 @@ func checkPasswordHash(password, hash string) bool {
 	return err == nil
 }
 
-func generateToken(username string) (string, error) {
+func generateToken(userdata string) (string, error) {
 
 	// Create the Claims
 	claims := jwt.MapClaims{
-		"name": username,
-		"user": true,
-		"exp":  time.Now().Add(time.Hour * 72).Unix(),
+		"userdata": userdata,
+		"user":     true,
+		"exp":      time.Now().Add(time.Hour * 72).Unix(),
 	}
 
 	// Create token

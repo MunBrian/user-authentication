@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+</head>
+<body>
+    <p>Someone asked for a password reset <a href="http://localhost:3000/" target="_blank">Login-signup app</a></p>
+    
+    <p>Email {{ .Email}} </p>
+    
+    <p>If you want to reset ypur password, please follow this link.</p>
+    
+    <a href="http://localhost:3000/reset/%s" target="_blank"></a>
+    
+    <p>if you didi not request to reset your <a href="http://localhost:3000/" target="_blank">Login-signup app</a>
+        password, then you can ignore this message. </p>
+</body>
+</html>

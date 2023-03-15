@@ -14,7 +14,7 @@ func Restrict(c *fiber.Ctx) error {
 
 	claims := user.Claims.(jwt.MapClaims)
 
-	name, ok := claims["name"].(string)
+	name, ok := claims["userdata"].(string)
 
 	if !ok {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
