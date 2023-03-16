@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"net/smtp"
+	"os"
 )
 
 func GenerateEmail(email []string, token string) error {
@@ -33,7 +34,7 @@ func GenerateEmail(email []string, token string) error {
 	auth := smtp.PlainAuth(
 		"",
 		"bk.mungai254@gmail.com",
-		"cqrosyngpapcxdez",
+		os.Getenv("EMAILPASSWORD"),
 		"smtp.gmail.com",
 	)
 
