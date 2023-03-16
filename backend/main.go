@@ -30,7 +30,9 @@ func main() {
 	// JWT Middleware
 	app.Use(jwtware.New(jwtware.Config{SigningKey: []byte("secret")}))
 
-	app.Get("/home", middleware.Restrict, controllers.HomePage)
+	app.Get("/home", middleware.RestrictHome, controllers.HomePage)
+
+	app.Post("/reset-password", middleware.RestrictResetPassword, controllers.ResetPassword)
 
 	err := app.Listen(":8000")
 

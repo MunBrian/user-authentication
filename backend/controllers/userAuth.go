@@ -19,6 +19,11 @@ type ForgotPasswordData struct {
 	Email string `json:"email"`
 }
 
+type Password struct {
+	Password string `json:"password"`
+}
+
+// Sign Up controller
 func UserSignUp(c *fiber.Ctx) error {
 	//create a struct user of type User model
 	var user models.User
@@ -54,6 +59,7 @@ func UserSignUp(c *fiber.Ctx) error {
 	return c.JSON(user)
 }
 
+// LOgin Controller
 func UserLogin(c *fiber.Ctx) error {
 
 	//create formData struct of type LoginData
@@ -67,7 +73,7 @@ func UserLogin(c *fiber.Ctx) error {
 		return c.JSON(err.Error())
 	}
 
-	//get task from db using email
+	//get user from db using email
 	initializers.DB.Where("email = ?", formData.Email).First(&user)
 
 	//check if user exists
@@ -106,6 +112,7 @@ func UserLogin(c *fiber.Ctx) error {
 	})
 }
 
+// Home Controller
 func HomePage(c *fiber.Ctx) error {
 	// Get "name" claim value from request header
 	name := c.GetRespHeader("X-User-Name")
@@ -115,6 +122,7 @@ func HomePage(c *fiber.Ctx) error {
 	})
 }
 
+// Forgot Password Controller
 func ForgotPassword(c *fiber.Ctx) error {
 	var err error
 
@@ -142,6 +150,57 @@ func ForgotPassword(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "email sent successfull",
 	})
+}
+
+func ResetPassword(c *fiber.Ctx) error {
+	//create user struct of type User
+	var user models.User
+
+	// Get "email" claim value from request header
+	email := c.GetRespHeader("X-User-Email")
+
+	//get user from db using email
+	initializers.DB.Where("email = ?", email).First(&user)
+
+	//check if user exists
+	if user.ID == 0 {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"status":  fiber.StatusBadRequest,
+			"message": "invalid Credentials",
+		})
+	}
+
+	//struct newpassword of type password
+	var newPassword Password
+
+	//get password data from form body
+	if err := c.BodyParser(&newPassword); err != nil {
+		return c.JSON(err.Error())
+	}
+
+	//compare formdata password and db user password
+	//returns true/false
+	match := checkPasswordHash(newPassword.Password, user.Password)
+
+	//if passwords match
+	if match {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"status":  fiber.StatusBadRequest,
+			"message": "Password should not be same as previous one.",
+		})
+	}
+
+	//hash the new password
+	hashedNewPassword, _ := hashPassword(newPassword.Password)
+
+	//update users password
+	initializers.DB.Model(&user).Update("password", hashedNewPassword)
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"status":  fiber.StatusOK,
+		"Message": "Password Reset was successful",
+	})
+
 }
 
 // generate hashed password

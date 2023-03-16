@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
+
   //get token from url
   const { token } = useParams();
 
@@ -9,10 +11,10 @@ const ResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [err, setErr] = useState(false);
-
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     //check password validity
@@ -22,8 +24,33 @@ const ResetPassword = () => {
       return;
     }
 
-    setMessage("");
-    console.log(password);
+    const url = "http://localhost:8000/reset-password";
+
+    const data = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        password: password,
+      }),
+    });
+
+    const res = await data.json();
+
+    if (res.status === 400) {
+      setErr(true);
+      setMessage(res.message);
+      return;
+    }
+
+    setErr(false);
+    setSuccess(true);
+
+    setTimeout(() => {
+      navigate("/login");
+    }, 3000);
   };
 
   return (
@@ -31,6 +58,13 @@ const ResetPassword = () => {
       <div className="w-2/5 text-center">
         <div className="mb-4">
           <h2 className="font-bold text-black mb-3 text-3xl">Reset Password</h2>
+        </div>
+        <div
+          className={`p-3 bg-lightgreen text-white text-center my-2 rounded-md ${
+            !success ? "hidden" : " "
+          }`}
+        >
+          <p>Password Reset was successful.</p>
         </div>
         <form className="flex flex-col" onSubmit={handleSubmit}>
           <div className="mb-5">

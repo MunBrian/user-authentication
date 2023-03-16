@@ -33,7 +33,7 @@ func GenerateEmail(email []string, token string) error {
 
 	auth := smtp.PlainAuth(
 		"",
-		"bk.mungai254@gmail.com",
+		"hellenginger01@gmail.com",
 		os.Getenv("EMAILPASSWORD"),
 		"smtp.gmail.com",
 	)
@@ -45,7 +45,7 @@ func GenerateEmail(email []string, token string) error {
 	err = smtp.SendMail(
 		"smtp.gmail.com:587",
 		auth,
-		"bk.mungai254@gmail.com",
+		"hellenginger01@gmail.com",
 		email,
 		[]byte(msg),
 	)
