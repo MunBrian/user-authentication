@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState("");
 
   //get user data from localstorage
@@ -35,7 +37,28 @@ const HomePage = () => {
     return <Navigate to="/login" />;
   }
 
-  return <div>Hello {user}, welcome to the HomePage</div>;
+  const handleLogout = (e) => {
+    e.preventDefault();
+
+    //clear user token
+    localStorage.clear();
+
+    navigate("/");
+  };
+
+  return (
+    <>
+      <div className="h-screen w-screen flex justify-center items-center">
+        <div>Hello {user}, welcome to the HomePage</div>
+        <button
+          onClick={(e) => handleLogout(e)}
+          className="border-lightgrey border-2 rounded-md p-4 placeholder:text-darkgrey"
+        >
+          Logout
+        </button>
+      </div>
+    </>
+  );
 };
 
 export default HomePage;

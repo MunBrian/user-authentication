@@ -30,6 +30,8 @@ const ForgotPassword = () => {
       );
 
       setemail("");
+
+      return;
     }
   };
 

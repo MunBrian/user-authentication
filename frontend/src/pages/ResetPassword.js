@@ -24,6 +24,14 @@ const ResetPassword = () => {
       return;
     }
 
+    if (password.length < 6) {
+      setErr((prevState) => ({
+        ...prevState,
+        passwordLengthErr: true,
+      }));
+      return;
+    }
+
     const url = "http://localhost:8000/reset-password";
 
     const data = await fetch(url, {
