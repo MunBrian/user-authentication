@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"os"
 	"time"
 
 	"github.com/MunBrian/user-authentication/initializers"
@@ -229,7 +230,7 @@ func generateToken(userdata string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
 	// Generate encoded token and send it as response.
-	t, err := token.SignedString([]byte("secret"))
+	t, err := token.SignedString([]byte(os.Getenv("SECRET")))
 
 	return t, err
 }
