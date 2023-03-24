@@ -20,7 +20,7 @@ JWT authentication has been used to secure the app.
 * TailwindCss.
 
 <ins>backend</ins>
-* Go Fiber, which is a Golang web framework.
+* Go Fiber, a Golang web framework.
 
 <ins>database.</ins>
 * PostgreSQL 
