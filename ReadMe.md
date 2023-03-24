@@ -69,7 +69,7 @@ EMAIL="<sender email address>"
 ## Usage
 
 1. Start the PostgreSQL database, by running the following command:
-	-On Windows
+	- On Windows
 		1. Open the Windows command prompt or PowerShell
 		2. Navigate to the directory where PostgreSQL is installed (usually `C:\Program Files\PostgreSQL\<version>\bin` ).
 		3. Run the `pg_ctl` command with the `-D` option and the path to your data directory. For Example:  
@@ -77,7 +77,7 @@ EMAIL="<sender email address>"
 			pg_ctl -D C:\Program Files\PostgreSQL\<version>\data start
 		```
 
-	-On Linux using Ubuntu
+	- On Linux using Ubuntu
 		1. Open the Ubuntu terminal on your system.
 		2. Type the following command to start the PostgreSQL server:
 		```
