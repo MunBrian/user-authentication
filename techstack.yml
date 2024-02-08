@@ -1,0 +1,450 @@
+repo_name: MunBrian/user-authentication
+report_id: 3cb6d0e0a503c92e9277243be8860dcb
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-08T10:29:26+00:00'
+requested_by: MunBrian
+provider: github
+branch: master
+detected_tools_count: 32
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/MunBrian/user-authentication
+  detection_source: Repo Metadata
+- name: Golang
+  description: An open source programming language that makes it easy to build simple,
+    reliable, and efficient software
+  website_url: http://golang.org/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1005/O6AczwfV_400x400.png
+  detection_source_url: https://github.com/MunBrian/user-authentication
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/MunBrian/user-authentication
+  detection_source: Repo Metadata
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: React Router
+  description: A complete routing solution for React.js
+  website_url: https://github.com/rackt/react-router
+  version: 6.8.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: JavaScript Framework Components
+  image_url: https://img.stackshare.io/service/3350/8261421.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: Tailwind CSS
+  description: A utility-first CSS framework for rapid UI development
+  website_url: https://tailwindcss.com
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/8158/default_660b7c41c3ba489cb581eec89c04655404258c19.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/package.json
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-02-25 21:37:48.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/MunBrian/user-authentication
+  detection_source: Repo Metadata
+- name: Yarn
+  description: A new package manager for JavaScript
+  website_url: https://yarnpkg.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/yarn.lock
+  last_updated_by: MunBrian
+  last_updated_on: 2023-02-25 13:16:37.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/package.json
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-02-25 13:16:37.000000000 Z
+- name: axios
+  description: Promise based HTTP client for the browser and node.js
+  website_url: https://github.com/mzabriskie/axios
+  version: 1.3.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: bytebufferpool
+  description: Anti-memory-waste byte buffer pool
+  package_url: https://pkg.go.dev/github.com/valyala/bytebufferpool
+  version: 1.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: compress
+  description: Optimized compression packages
+  package_url: https://pkg.go.dev/github.com/klauspost/compress
+  version: 1.15.9
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: crypto
+  description: Go supplementary cryptography libraries
+  package_url: https://pkg.go.dev/golang.org/x/crypto
+  version: 0.0.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-15 21:00:29.000000000 Z
+  vulnerabilities:
+  - name: Improper Verification of Cryptographic Signature in golang.org/x/crypto
+    cve_id: CVE-2020-9283
+    cve_url: https://github.com/advisories/GHSA-ffhg-7mh4-33c4
+    detected_date: Aug 22
+    severity: moderate
+    first_patched: 0.0.0-20200220183623-bac4c82f6975
+- name: fasthttp
+  description: Fast HTTP package for Go
+  package_url: https://pkg.go.dev/github.com/valyala/fasthttp
+  version: 1.44.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: fwd
+  description: Buffered Reader/Writer
+  package_url: https://pkg.go.dev/github.com/philhofer/fwd
+  version: 1.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: go-colorable
+  description: Go-colorable Colorable writer for windows
+  package_url: https://pkg.go.dev/github.com/mattn/go-colorable
+  version: 0.1.13
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: go-isatty
+  description: Package isatty implements interface to isatty
+  package_url: https://pkg.go.dev/github.com/mattn/go-isatty
+  version: 0.0.16
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: go-runewidth
+  description: Go-runewidth Provides functions to get fixed width of the character
+    or string
+  package_url: https://pkg.go.dev/github.com/mattn/go-runewidth
+  version: 0.0.14
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: godotenv
+  description: A Go port of Ruby's dotenv library
+  package_url: https://pkg.go.dev/github.com/joho/godotenv
+  version: 1.5.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-15 21:00:29.000000000 Z
+- name: google/uuid
+  description: 'Go package for UUIDs based on RFC 4122 and DCE 1.1: Authentication
+    and Security Services'
+  package_url: https://pkg.go.dev/github.com/google/uuid
+  version: 1.3.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: inflection
+  description: Pluralizes and singularizes English nouns
+  package_url: https://pkg.go.dev/github.com/jinzhu/inflection
+  version: 1.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: msgp
+  description: A Go code generator for MessagePack / msgpack.org[Go]
+  package_url: https://pkg.go.dev/github.com/tinylib/msgp
+  version: 1.1.6
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: now
+  description: Now is a time toolkit for golang
+  package_url: https://pkg.go.dev/github.com/jinzhu/now
+  version: 1.1.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: sys
+  description: Go packages for low-level interaction with the operating system
+  package_url: https://pkg.go.dev/golang.org/x/sys
+  version: 0.0.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: tcplisten
+  description: Customizable TCP net.Listener for Go
+  package_url: https://pkg.go.dev/github.com/valyala/tcplisten
+  version: 1.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: text
+  description: Go text processing support
+  package_url: https://pkg.go.dev/golang.org/x/text
+  version: 0.3.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/backend/go.sum
+  detection_source: backend/go.mod
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: "@testing-library/jest-dom"
+  description: Custom jest matchers to test the state of the DOM
+  package_url: https://www.npmjs.com/@testing-library/jest-dom
+  version: 5.16.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17424/default_1cdcda15ebb7caed879f8340bc212b44c4ec9dac.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: "@testing-library/react"
+  description: Simple and complete React DOM testing utilities that encourage good
+    testing practices
+  package_url: https://www.npmjs.com/@testing-library/react
+  version: 13.4.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16549/default_d522554c6a41cb28d922d6d3ad32ad4afa0e3bb5.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: react-dom
+  description: React package for working with the DOM
+  package_url: https://www.npmjs.com/react-dom
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: react-router-dom
+  description: DOM bindings for React Router
+  package_url: https://www.npmjs.com/react-router-dom
+  version: 6.8.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16025/default_e25d1fbb04a118c79fb444294461417342bd03bf.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: react-scripts
+  description: Configuration and scripts for Create React App
+  package_url: https://www.npmjs.com/react-scripts
+  version: 5.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15985/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-03-01 20:59:57.000000000 Z
+- name: tailwindcss
+  description: A utility-first CSS framework for rapidly building custom user interfaces
+  package_url: https://www.npmjs.com/tailwindcss
+  version: 3.2.7
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
+  detection_source_url: https://github.com/MunBrian/user-authentication/blob/master/frontend/yarn.lock
+  detection_source: frontend/package.json
+  last_updated_by: MunBrian
+  last_updated_on: 2023-02-25 21:37:48.000000000 Z
